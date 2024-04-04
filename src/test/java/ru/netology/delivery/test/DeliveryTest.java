@@ -38,7 +38,7 @@ class DeliveryTest {
         $("[data-test-id = agreement]").click();
         $(byText("Запланировать")).click();
         $(byText("Успешно!")).shouldBe(Condition.visible, Duration.ofSeconds(15));
-        $("[data-test-id = 'succes-notification']:notification__content")
+        $("[data-test-id ='success-notification'] .notification__content")
                 .shouldHave(Condition.exactText("Встреча успешно забронирована на " + firstMeetingDate))
                 .shouldBe(Condition.visible, Duration.ofSeconds(15));
         $("[data-test-id = date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
